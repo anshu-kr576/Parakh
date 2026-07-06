@@ -1,594 +1,543 @@
 {
-  "paperMetadata": {
-    "title": "Series QQARR/1 SET-2 Q.P. Code 31/1/2",
-    "subject": "SCIENCE",
-    "examType": "CBSE Board Examination",
-    "duration": "2 hours",
-    "totalMarks": 40,
-    "instructions": [
-      "This question paper comprises 15 questions. All questions are compulsory.",
-      "This question paper is divided into three sections - A, B and C.",
-      "Section A - Questions No. 1 to 7 are short answer type questions. Each question carries 2 marks.",
-      "Section B - Questions No. 8 to 13 are also short answer type questions. Each question carries 3 marks.",
-      "Section C - Questions No. 14 and 15 are case-based questions. Each question carries 4 marks.",
-      "Internal choices have been provided in some questions. Only one of the alternatives has to be attempted."
-    ]
-  },
-  "parsingStatus": {
-    "success": true,
-    "paperClarity": "clear",
-    "confidence": 0.98,
-    "errors": [],
-    "warnings": []
-  },
-  "questions": [
-    {
-      "id": "Q1",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q1.a",
-          "text": "What is ozone? How is it formed in the upper layers of the Earth's atmosphere? How does ozone affect our ecosystem ?",
-          "marks": "2",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q1.b",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q1.b.i",
-              "text": "List two human-made ecosystems.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q1.b.ii",
-              "text": "We do not clean a pond in the same manner as we do in an aquarium. Give reason to justify this statement.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q2",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q2.a",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q2.a.i",
-              "text": "Name and state the rule to determine the direction of force experienced by a current carrying straight conductor placed in a uniform magnetic field which is perpendicular to it.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q2.a.ii",
-              "text": "An alpha particle while passing through a magnetic field gets projected towards north. In which direction will an electron project when it passes through the same magnetic field?",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": "Q2.b",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q2.b.i",
-              "text": "What is a solenoid ?",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q2.b.ii",
-              "text": "Draw the pattern of magnetic field lines of the magnetic field produced by a solenoid through which a steady current flows.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q3",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q3.a",
-          "text": "What is variation? List two main reasons that may lead to variation in a population.",
-          "marks": "2",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q3.b",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q3.b.i",
-              "text": "In a cross between violet flowered plants and white flowered plants, state the characteristics of the plants obtained in the F1 progeny.",
-              "marks": "0.5",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q3.b.ii",
-              "text": "If the plants of F1 progeny are self-pollinated, then what would be observed in the plants of F2 progeny?",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q3.b.iii",
-              "text": "If 100 plants are produced in F2 progeny, then how many plants will show the recessive trait ?",
-              "marks": "0.5",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q4",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q4.a",
-          "text": "Which of the following flowers will have higher possibility of self-pollination? Mustard, Papaya, Watermelon, Hibiscus",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q4.b",
-          "text": "List the two reproductive parts of a bisexual flower.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q5",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q5.a",
-          "text": "Name the process shown below and define it :",
-          "marks": "1",
-          "attachments": [
-            {
-              "type": "diagram",
-              "description": "Diagram illustrating regeneration in Planaria where the organism is cut into three pieces, and each piece grows back into a complete individual organism."
-            }
-          ],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q5.b",
-          "text": "Name the types of cells present in the organisms which exhibit this process.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q6",
-      "text": "What is a Döbereiner triad? Why can't the following three elements form such a triad? N (14); P (31); As (75) (Atomic masses are given in parenthesis)",
-      "marks": "2",
-      "attachments": [],
-      "ruberic": [],
-      "children": []
-    },
-    {
-      "id": "Q7",
-      "text": "The molecular formulae of two alkynes, A and B are CxH2 and C3Hy respectively.",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q7.a",
-          "text": "Find the values of x and y.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q7.b",
-          "text": "Write the names of A and B.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q8",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q8.a",
-          "text": "Name the group of organisms which form in the first trophic level of all food chains. Why are they called so ?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q8.b",
-          "text": "Why are the human beings most adversely affected by bio-magnification?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q8.c",
-          "text": "State one ill-effect of the absence of decomposers from a natural ecosystem.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q9",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q9.a",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q9.a.i",
-              "text": "Define Electric Power and write its SI unit.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q9.a.ii",
-              "text": "Two bulbs rated 100 W; 220 V and 60 W; 220 V are connected in parallel to an electric mains of 220 V. Find the current drawn by the bulbs from the mains.",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": "Q9.b",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q9.b.i",
-              "text": "State Joule's law of heating. Express it mathematically when an appliance of resistance R is connected to a source of voltage V and the current I flows through the appliance for a time t.",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q9.b.ii",
-              "text": "A 5 Ω resistor is connected across a battery of 6 volts. Calculate the energy that dissipates as heat in 10 s.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q10",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q10.a",
-          "text": "Calculate the resistance of a metal wire of length 2m and area of cross-section 1.55 x 10^-6 m^2. (Resistivity of the metal is 2.8 x 10^-8 Ω m)",
-          "marks": "2",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q10.b",
-          "text": "Why are alloys preferred over pure metals to make the heating elements of electrical heating devices ?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q11",
-      "text": "A cross was made between green-stemmed tomato plants denoted by (GG) and purple-stemmed tomato plants denoted as (gg) to obtain F1 progeny.",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q11.a",
-          "text": "What colour of the stem would you expect in their F1 progeny and why?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q11.b",
-          "text": "Give the percentage of purple-stemmed plants if F1 plants are allowed to self-pollinate to produce F2 progeny.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q11.c",
-          "text": "Write the ratio between GG and gg plants in the F2 progeny?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q12",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q12.a",
-          "text": "Draw two different possible structures of a saturated hydrocarbon having four carbon atoms in its molecule. What are these two structures of the hydrocarbon having same molecular formula called? Write the molecular formula and the common name of this compound. Also write the molecular formula of its alkyne.",
-          "marks": "3",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q12.b",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q12.b.i",
-              "text": "Write the molecular formula of benzene and draw its structure.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q12.b.ii",
-              "text": "Write the number of single and double covalent bonds present in a molecule of benzene.",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q12.b.iii",
-              "text": "Which compounds are called alkynes?",
-              "marks": "1",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q13",
-      "text": "",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q13.a",
-          "text": "List two advantages of adopting the atomic number of an element as the basis of classification of elements in the Modern Periodic Table.",
-          "marks": "1.5",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q13.b",
-          "text": "Write the electronic configurations of the elements X (atomic number 13) and Y (atomic number 20).",
-          "marks": "1.5",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "Q14",
-      "text": "A student fixes a sheet of white paper on a drawing board using some adhesive materials. She places a bar magnet in the centre of it and sprinkles some iron filings uniformly around the bar magnet using a salt-sprinkler. On tapping the board gently, she observes that the iron filings have arranged themselves in a particular pattern.",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q14.a",
-          "text": "Draw a diagram to show this pattern of iron filings.",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q14.b",
-          "text": "What does this pattern of iron filings demonstrate ?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q14.c",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q14.c.i",
-              "text": "How is the direction of magnetic field at a point determined using the field lines ? Why do two magnetic field lines not cross each other ?",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q14.c.ii",
-              "text": "How are the magnetic field lines of a bar magnet drawn using a small compass needle ? Draw one magnetic field line each on both sides of the magnet.",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q15",
-      "text": "The mechanism by which the sex of an individual is determined is called sex-determination. In human beings, sex of a newborn is genetically determined, whereas in some others it is not. There are 46 (23 pairs) chromosomes in human beings. Out of these, 44 (22 pairs) control the body characters and 2 (one pair) are known as sex chromosomes. The sex chromosomes are of two types X chromosome and Y chromosome. At the time of fertilisation, depending upon which type of male gamete fuses with the female gamete, the sex of the newborn child is decided.",
-      "marks": "infer from children and choice description",
-      "attachments": [],
-      "ruberic": [],
-      "children": [
-        {
-          "id": "Q15.a",
-          "text": "Why is a pair of sex chromosomes in human beings called a mismatched pair in terms of type and size ?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q15.b",
-          "text": "If the gametes always have half the number of chromosomes, then how is the original number of chromosomes restored in the organism ?",
-          "marks": "1",
-          "attachments": [],
-          "ruberic": [],
-          "children": []
-        },
-        {
-          "id": "Q15.c",
-          "text": "",
-          "marks": "infer from children and choice description",
-          "attachments": [],
-          "ruberic": [],
-          "children": [
-            {
-              "id": "Q15.c.i",
-              "text": "Name two animals whose sex is not genetically determined. Explain the process of their sex determination.",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            },
-            {
-              "id": "Q15.c.ii",
-              "text": "With the help of a flowchart only, show how sex is genetically determined in human beings.",
-              "marks": "2",
-              "attachments": [],
-              "ruberic": [],
-              "children": []
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "choiceInformation": {
-    "detailedDescription": "Internal choices are provided at the main question level or sub-question levels in the paper. For Question 1, candidates choose between Q1.a or Q1.b (i and ii). For Question 2, candidates choose between Q2.a (i and ii) or Q2.b (i and ii). For Question 3, candidates choose between Q3.a or Q3.b (i, ii, and iii). For Question 9, candidates choose between Q9.a (i and ii) or Q9.b (i and ii). For Question 12, candidates choose between Q12.a or Q12.b (i, ii, and iii). For Case-based Question 14, sub-question (c) offers a choice between option (i) or option (ii). For Case-based Question 15, sub-question (c) offers a choice between option (i) or option (ii).",
-    "summary": "All 15 questions are compulsory, but internal choices are offered within specific questions: (Q1.a OR Q1.b), (Q2.a OR Q2.b), (Q3.a OR Q3.b), (Q9.a OR Q9.b), (Q12.a OR Q12.b), (Q14.c.i OR Q14.c.ii), and (Q15.c.i OR Q15.c.ii)."
-  }
+"paperMetadata": {
+"title": "SUMMATIVE ASSESSMENT - II",
+"subject": "SCIENCE",
+"examType": "SUMMATIVE ASSESSMENT - II",
+"duration": "3 hours",
+"totalMarks": 90,
+"instructions": [
+"The question paper comprises two Sections, A and B. You are to attempt both the sections.",
+"All questions are compulsory.",
+"There is no choice in any of the questions.",
+"All questions of Section A and all questions of Section B are to be attempted separately.",
+"Question numbers 1 to 3 in Section A are one-mark questions. These are to be answered in one word or in one sentence.",
+"Question numbers 4 to 6 in Section A are two-marks questions. These are to be answered in about 30 words each.",
+"Question numbers 7 to 18 Section A are three-marks questions. These are to be answered in about 50 words each.",
+"Question numbers 19 to 24 in Section A are five-marks questions. These are to be answered in about 70 words each.",
+"Question numbers 25 to 33 in Section B are multiple choice questions based on practical skills. Each question is a one-mark question. You are to select one most appropriate response out of the four provided to you.",
+"Question numbers 34 to 36 in Section B are two-marks questions based on practical skills. These are to be answered in brief."
+]
+},
+"parsingStatus": {
+"success": true,
+"paperClarity": "clear",
+"confidence": 0.98,
+"errors": [],
+"warnings": []
+},
+"questions": [
+{
+"id": "Q1",
+"text": "Write the name and structure of an aldehyde with four carbon atoms in its molecule.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q2",
+"text": "List two functions of ovary of human female reproductive system.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q3",
+"text": "In a food chain of frog, grass, insect and snake, assign trophic level to frog.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q4",
+"text": "The refractive indices of glass and water with respect to air are 3/2 and 4/3 respectively. If speed of light in glass is $2\times10^{8}m/s$, find the speed of light in water.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q5",
+"text": "List four stakeholders which may be helpful in the conservation of forests.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q6",
+"text": "The construction of large dams leads to social and environmental problems. List two problems of each category.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7",
+"text": "The position of eight elements in the Modern Periodic Table is given below where atomic numbers of elements are given in the parenthesis.\n\nPeriod No.\n2 | Li (3) | Be (4)\n3 | Na (11) | Mg (12)\n4 | K (19) | Ca (20)\n5 | Rb (37) | Sr (38)",
+"marks": "infer from children and choice description",
+"attachments": [
+{
+"type": "table",
+"description": "The position of eight elements in the Modern Periodic Table",
+"headers": ["Period No.", "", ""],
+"rows": [
+["2", "Li (3)", "Be (4)"],
+["3", "Na (11)", "Mg (12)"],
+["4", "K (19)", "Ca (20)"],
+["5", "Rb (37)", "Sr (38)"]
+]
+}
+],
+"ruberic": [],
+"children": [
+{
+"id": "Q7.i",
+"text": "Write the electronic configuration of Ca.",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7.ii",
+"text": "Predict the number of valence electrons in Rb.",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7.iii",
+"text": "What is the number of shells in Sr?",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7.iv",
+"text": "Predict whether K is a metal or a non - metal.",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7.v",
+"text": "Which one of these elements has the largest atom in size ?",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q7.vi",
+"text": "Arrange Be, Ca, Mg and Rb in the increasing order of the size of their respective atoms.",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+},
+{
+"id": "Q8",
+"text": "Write three different chemical reactions showing the conversion of ethanoic acid to sodium ethanoate. Write balanced chemical equation in each case. Write the name of the reactants and the products other than ethanoic acid and sodium ethanoate in each case.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q9",
+"text": "An element 'X' belong to 3rd period and group 13 of the Modern Periodic Table.",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q9.a",
+"text": "Determine the valence electrons and the valency of 'X'.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q9.b",
+"text": "Molecular formula of the compound formed when 'X' reacts with an element 'Y' (atomic number = 8).",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q9.c",
+"text": "Write the name and formula of the compound formed when 'X' combines with chlorine.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+},
+{
+"id": "Q10",
+"text": "An element 'X' has mass number 35 and number of neutrons 18. Write atomic number and electronic configuration of 'X'. Also write group number, period number and valency of 'X'.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q11",
+"text": "",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q11.a",
+"text": "List two reasons for the appearance of variations among the progeny formed by sexual reproduction.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q11.b",
+"text": "",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q11.b.i",
+"text": "Name the part marked 'A' in the diagram.",
+"marks": "0.5",
+"attachments": [
+{
+"type": "diagram",
+"description": "Diagram of a carpel/pistil showing pollen tube growth with labels A, B, C, D"
+}
+],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q11.b.ii",
+"text": "How does 'A' reaches part 'B' ?",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q11.b.iii",
+"text": "State the importance of the part 'C'.",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q11.b.iv",
+"text": "What happens to the part marked 'D' after fertilisation is over?",
+"marks": "0.5",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+}
+]
+},
+{
+"id": "Q12",
+"text": "Define reproduction. How does it help in providing stability to the population of species?",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q13",
+"text": "Explain the term Regeneration as used in relation to reproduction of organisms. Describe briefly how regeneration is carried out in multicellular organisms like Hydra.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q14",
+"text": "Two areas of study namely 'evolution' and 'classification' are interlinked. Justify this statement.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q15",
+"text": "How do Mendel's experiment show that traits are inherited independently?",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q16",
+"text": "The activities of man had adverse effects on all forms of living organisms in the biosphere. Unlimited exploitation of nature by man disturbed the delicate ecological balance between the living and non-living components of the biosphere. The unfavourable conditions created by man himself threatened the survival not only of himself but also of the entire living organisms on the mother earth. One of your classmates is an active member of 'Eco club' of your school which is creating environmental awareness amongst the school students, spreading the same in the society and also working hard for preventing environmental degradation of the surroundings.",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q16.a",
+"text": "Why is it necessary to conserve our environment ?",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q16.b",
+"text": "State the importance of green and blue dust-bins in the safe disposal of the household waste.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q16.c",
+"text": "List two values exhibited by your classmate who is an active member of Eco-club of your school.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+},
+{
+"id": "Q17",
+"text": "The image formed by a spherical mirror is real, inverted and is of magnification -2. If the image is at a distance of 30 cm from the mirror, where is the object placed? Find the focal length of the mirror. List two characteristics of the image formed if the object is moved 10 cm towards the mirror.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q18",
+"text": "Describe an activity to show that the colours of white light splitted by a glass prism can be recombined to get white light by another identical glass prism. Also draw ray diagram to show the recombination of the spectrum of white light.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q19",
+"text": "It is desired to obtain an erect image of an object, using concave mirror of focal length of 12 cm.",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q19.i",
+"text": "What should be the range of distance of an object placed in front of the mirror?",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q19.ii",
+"text": "Will the image be smaller or larger than the object. Draw ray diagram to show the formation of image in this case.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q19.iii",
+"text": "Where will the image of this object be, if it is placed 24 cm in front of the mirror? Draw ray diagram for this situation also to justify your answer. Show the positions of pole, principal focus and the centre of curvature in the above ray diagrams.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+},
+{
+"id": "Q20",
+"text": "Define evolution. How does it occur? Describe how fossils provide us evidences in support of evolution.",
+"marks": "5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q21",
+"text": "What is placenta? Describe its structure. State its functions in case of a pregnant human female.",
+"marks": "5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q22",
+"text": "A carbon compound 'P' on heating with excess conc. $H_{2}SO_{4}$ forms another carbon compound 'Q' which on addition of hydrogen in the presence of nickel catalyst forms a saturated carbon compound 'R'. One molecule of 'R' on combustion forms two molecules of carbon dioxide and three molecules of water. Identify P, Q and R and write chemical equations for the reactions involved.",
+"marks": "5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q23",
+"text": "What is atmospheric refraction? Use this phenomenon to explain the following natural events:\n(a) Twinkling of stars\n(b) Advanced sun-rise and delayed sun-set.\nDraw diagrams to illustrate your answers.",
+"marks": "5",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q24",
+"text": "",
+"marks": "infer from children and choice description",
+"attachments": [],
+"ruberic": [],
+"children": [
+{
+"id": "Q24.a",
+"text": "Define focal length of a divergent lens.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q24.b",
+"text": "A divergent lens of focal length 30 cm forms the image of an object of size 6 cm on the same side as the object at a distance of 15 cm from its optical centre. Use lens formula to determine the distance of the object from the lens and the size of the image formed.",
+"marks": "3",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q24.c",
+"text": "Draw a ray diagram to show the formation of image in the above situation.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+]
+},
+{
+"id": "Q25",
+"text": "A student while observing an embryo of a pea seed in the laboratory listed various parts of the embryo as given below :\nTesta, Tegmen, Radicle, Plumule, Micropyle, Cotyledon.\nOn examining the list the teacher remarked that only three parts are correct. Select three correct parts from the above list:\n(a) Testa, Radicle, Cotyledon\n(b) Tegmen, Radicle, Micropyle\n(c) Cotyledon, Plumule, Testa\n(d) Radicle, Cotyledon, Plumule",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q26",
+"text": "If you are asked to select a group of two vegetables, out of the following, having homologous structures which one would you select ?\n(a) Carrot and radish\n(b) Potato and sweet potato\n(c) Potato and tomato\n(d) Lady finger and potato",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q27",
+"text": "In the following ray diagram the correctly marked angle are:\n(a) $\angle i$ and $\angle e$\n(b) $\angle A$ and $\angle D$\n(c) $\angle i$, $\angle e$ and $\angle D$\n(d) $\angle r$, $\angle A$ and $\angle D$",
+"marks": "1",
+"attachments": [
+{
+"type": "diagram",
+"description": "Ray diagram showing refraction through a glass prism with angles labeled A, i, r, e, D"
+}
+],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q28",
+"text": "In your laboratory you trace the path of light rays through a glass slab for different values of angle of incidence (i) and in each case measure the values of the corresponding angle of refraction (r) and angle of emergence (\angle e).\nOn the basis of your observations your correct conclusion is :\n(a) \angle i is more than \angle r, but nearly equal to \angle e\n(b) \angle i is less than \angle r, but nearly equal to \angle e\n(c) \angle i is more than \angle e, but nearly equal to r\n(d) i is less than \angle e, but nearly equal to r",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q29",
+"text": "To determine the approximate value of the focal length of a given concave mirror, you focus the image of a distant object formed by the mirror on a screen. The image obtained on the screen, as compared to the object is always:\n(a) Laterally inverted and diminished\n(b) Inverted and diminished\n(c) Erect and diminished\n(d) Erect and highly diminished",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q30",
+"text": "Suppose you have focused on a screen the image of candle flame placed at the farthest end of the laboratory table using a convex lens. If your teacher suggests you to focus the parallel rays of the sun, reaching your laboratory table, on the same screen, what you are expected to do is to move the :\n(a) lens slightly towards the screen\n(b) lens slightly away from the screen\n(c) lens slightly towards the sun\n(d) lens and screen both towards the sun",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q31",
+"text": "For preparing soap in the laboratory we require an oil and a base. Which of the following combinations of an oil and a base would be best suited for the preparation of soap ?\n(a) Castor oil and calcium hydroxide\n(b) Turpentine oil and sodium hydroxide\n(c) Castor oil and sodium hydroxide\n(d) Mustard oil and calcium hydroxide",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q32",
+"text": "A student puts a drop of reaction mixture of a saponification reaction first an a blue litmus paper and then on a red litmus paper. He may observe that:\n(a) There is no change in the blue litmus paper and the red litmus paper turns white.\n(b) There is no change in the red litmus paper and the blue litmus paper turns red.\n(c) There is no change in the blue litmus paper and the red litmus paper turns blue.\n(d) No change in colour is observed in both the litmus papers.",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q33",
+"text": "In the neighbourhood of your school, hard water required for an experiment is not available. Select from the following groups of salts available in your school, a group each member of which, if dissolved in distilled water, will make it hard:\n(a) Sodium chloride, calcium chloride\n(b) Potassium chloride, sodium chloride\n(c) Sodium chloride, magnesium chloride\n(d) Calcium chloride, magnesium chloride",
+"marks": "1",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q34",
+"text": "A student is observing a permanent slide showing sequentially the different stages of asexual reproduction taking place in yeast. Name this process and draw diagrams, of what he observes, in a proper sequence.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q35",
+"text": "An object of height 2.5 cm is placed at a distance of 15 cm from the optical centre 'O' of a convex lens of focal length 10 cm. Draw a ray diagram to find the position and size of the image formed. Mark optical centre 'O', principal focus F and height of the image on the diagram.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+},
+{
+"id": "Q36",
+"text": "A student adds a spoon full of powdered sodium hydrogen carbonate to a flask containing ethanoic acid. List two main observations, he must note in his note book, about the reaction that takes place. Also write chemical equation for the reaction.",
+"marks": "2",
+"attachments": [],
+"ruberic": [],
+"children": []
+}
+],
+"choiceInformation": {
+"detailedDescription": "All questions are compulsory. There is no optional choice provided between questions.",
+"summary": "All compulsory"
+}
 }
