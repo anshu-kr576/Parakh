@@ -3,8 +3,10 @@ from google import genai
 
 from helpers.prompt import evaluation_prompt
 from helpers.validate_pdf import is_valid_pdf
+from helpers.validate_json import is_valid_json
 
 from pydantic_models.evaluation_response_model import EvaluationOutput
+from pydantic_models.questions_schema_model import QuestionPaper
 
 import os
 import logging
@@ -25,6 +27,7 @@ def status():
     return {"messege": "api is running"}
 
 # TODO:add more file validations and annotations (for better api docs)
+# TODO: implement concurrency feature
 @app.post('/ai/evaluate-answers')
 async def evaluate(answer_pdf: UploadFile, question_json: UploadFile):
 
@@ -50,6 +53,15 @@ async def evaluate(answer_pdf: UploadFile, question_json: UploadFile):
             status_code = 422,
             detail = "invalid pdf"
         )
+    logger.info("answer pdf validation Okay")
+    
+    # validate json structure
+    if not await is_valid_json(question_json, QuestionPaper):
+        raise HTTPException(
+            status_code = 422,
+            detail = "unexpected json schema, read docs."
+        )
+    logger.info("question json schema okay")
 
     # upload answer sheet
     uploaded_answersheet = client.files.upload(
