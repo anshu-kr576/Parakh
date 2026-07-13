@@ -30,8 +30,8 @@ const uploadPaper = async (req, res, next) => {
       throw error;
     }
 
-    for(const file of req.files){
-        console.log(`[Exam] <<< Responding 201 Created for file: ${file.originalname}`);
+    for (const file of req.files) {
+      console.log(`[Exam] <<< Responding 201 Created for file: ${file.originalname}`);
     }
     console.log(parsedData);
     return res.status(201).json({
@@ -57,7 +57,7 @@ const generateRubric = async (req, res, next) => {
   const { pdf_filename, parsed_data, questionPaperId, question_paper_id } = req.body;
   const paperId = questionPaperId || question_paper_id;
   const filename = pdf_filename || "unknown_paper.pdf";
-  
+
   console.log(`[Exam] >>> Incoming POST /api/exams/generate-rubric. File: ${filename}, ID: ${paperId || "new"}`);
 
   try {
@@ -77,14 +77,15 @@ const generateRubric = async (req, res, next) => {
       console.log("[Exam] => Storing new parsed question paper and rubrics in database...");
       result = await examService.storeExamPaper(parsed_data, filename);
     }
-    console.log(`[Exam] => Successfully stored/updated in DB with Record ID: ${result.id}`);
+    const finalPaperId = result?.id || paperId;
+    console.log(`[Exam] => Successfully stored/updated in DB with Record ID: ${finalPaperId}`);
 
-    console.log(`[Exam] <<< Responding 201 Created. ID: ${result.id}`);
+    console.log(`[Exam] <<< Responding 201 Created. ID: ${finalPaperId}`);
     return res.status(201).json({
       success: true,
       message: "Question paper and rubrics saved successfully.",
-      examPaperId: result.id,
-      createdAt: result.created_at,
+      examPaperId: finalPaperId,
+      createdAt: result?.created_at || new Date().toISOString(),
     });
   } catch (error) {
     console.error(`[Exam] [FATAL ERROR] => ${error.message}`);
