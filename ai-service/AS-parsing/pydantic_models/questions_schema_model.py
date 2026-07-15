@@ -72,6 +72,10 @@ class QuestionBase(StrictModel):
 
     marks: str
 
+    extractedTotalMarks: Optional[str] = None
+
+    diagramRequired: Optional[bool] = None
+
     attachments: Optional[List[Attachment]] = None
 
     rubric: List[str]
@@ -84,16 +88,17 @@ class QuestionBase(StrictModel):
 # -----------------------------------------------------
 
 class Level3Question(QuestionBase):
-    pass
+    extractedTotalMarks: None = None
 
 
 class Level2Question(QuestionBase):
-    children: Optional[List[Level3Question]] = None
+    extractedTotalMarks: None = None
+    children: Optional[List["Level3Question"]] = None
 
 
 class Level1Question(QuestionBase):
     extractedTotalMarks: str
-    children: Optional[List[Level2Question]] = None
+    children: Optional[List["Level2Question"]] = None
 
 
 # -----------------------------------------------------
