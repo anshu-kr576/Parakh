@@ -16,11 +16,33 @@ export default function Navbar() {
 
   return (
     <header style={styles.navbar}>
-      <div style={styles.logo} onClick={() => navigate("/")}>
+      <div style={styles.logo} onClick={() => navigate(isAuthenticated ? "/dashboard" : "/")}>
         Parakh <span style={styles.gradient}>AI</span>
       </div>
 
       <nav style={styles.navGroup}>
+        {isAuthenticated && (
+          <>
+            <button
+              onClick={() => navigate("/dashboard")}
+              style={{
+                ...styles.navLink,
+                ...(location.pathname === "/dashboard" ? styles.navLinkActive : {}),
+              }}
+            >
+              Dashboard
+            </button>
+            <button
+              onClick={() => navigate("/upload")}
+              style={{
+                ...styles.navLink,
+                ...(location.pathname === "/upload" ? styles.navLinkActive : {}),
+              }}
+            >
+              New Paper
+            </button>
+          </>
+        )}
       </nav>
 
       <div style={styles.actions}>
@@ -66,16 +88,20 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "20px 40px",
-    background: "rgba(15, 23, 42, 0.6)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-    borderBottom: "1px solid #1e293b",
+    padding: "14px 32px",
+    background: "rgba(15, 23, 42, 0.65)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.08)",
+    borderRadius: "20px",
     position: "sticky",
-    top: 0,
+    top: "16px",
     zIndex: 100,
-    width: "100%",
+    width: "calc(100% - 48px)",
+    maxWidth: "1280px",
+    margin: "16px auto 0 auto",
     boxSizing: "border-box",
+    boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)",
   },
   logo: {
     fontSize: "24px",

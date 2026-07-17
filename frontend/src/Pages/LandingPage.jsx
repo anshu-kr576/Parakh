@@ -72,9 +72,10 @@ function LandingPage() {
 ];
 
   return (
-    <div style={styles.container}>
-       <div style={styles.heroGlow}></div>
+    <div style={{ background: "#0b1120", minHeight: "100vh", position: "relative" }}>
       <Navbar />
+      <div style={{ ...styles.container, paddingTop: 0 }}>
+         <div style={styles.heroGlow}></div>
 
       {/* Hero Section */}
       <section style={styles.hero}>
@@ -221,6 +222,7 @@ function LandingPage() {
         </button>
       </section>
     </div>
+   </div>
   );
 }
 

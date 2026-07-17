@@ -5,6 +5,7 @@ import ReviewPage from "./pages/ReviewPage";
 import UploadAnswersPage from "./pages/UploadAnswersPage";
 import EvaluationResultsPage from "./pages/EvaluationResultsPage";
 import NewLoginPage from "./pages/NewLoginPage";
+import DashboardPage from "./pages/DashboardPage";
 import { EvaluationProvider } from "./context/EvaluationContext";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -17,6 +18,9 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<NewLoginPage />} />
+            <Route path="/dashboard" element={
+              <ProtectedRoute><DashboardPage /></ProtectedRoute>
+            } />
             <Route path="/upload" element={
               <ProtectedRoute><UploadPage /></ProtectedRoute>
             } />

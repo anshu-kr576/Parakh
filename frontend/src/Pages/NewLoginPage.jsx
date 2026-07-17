@@ -60,7 +60,7 @@ export default function NewLoginPage() {
       setSuccess(true);
       setTimeout(() => {
         setSuccess(false);
-        navigate("/upload");
+        navigate("/dashboard");
       }, 1500);
     } catch (err) {
       setLoading(false);

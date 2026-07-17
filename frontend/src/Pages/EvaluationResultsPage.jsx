@@ -135,16 +135,33 @@ function EvaluationResultsPage() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  const { evaluations, totalMarks, isBulkUploading, bulkProgress, examPaperId, filename } = useEvaluation();
+  const { evaluations, totalMarks, isBulkUploading, bulkProgress, examPaperId, filename, setExamInfo } = useEvaluation();
   const [selectedId, setSelectedId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Select first student by default
+  // Initialize context from location state if deep-linked from dashboard
   useEffect(() => {
-    if (evaluations.length > 0 && selectedId === null) {
+    const stateExamPaperId = location.state?.examPaperId || location.state?.questionPaperId;
+    const stateFilename = location.state?.filename || location.state?.pdf_filename;
+    const stateTotalMarks = location.state?.totalMarks;
+
+    if (stateExamPaperId && stateExamPaperId !== examPaperId) {
+      setExamInfo({
+        examPaperId: stateExamPaperId,
+        filename: stateFilename || "exam_paper.pdf",
+        totalMarks: stateTotalMarks !== undefined ? stateTotalMarks : null,
+      });
+    }
+  }, [location.state, examPaperId, setExamInfo]);
+
+  // Select first student by default, or specific student if passed in location state
+  useEffect(() => {
+    if (location.state?.selectedEvaluationId) {
+      setSelectedId(location.state.selectedEvaluationId);
+    } else if (evaluations.length > 0 && selectedId === null) {
       setSelectedId(evaluations[0].id);
     }
-  }, [evaluations, selectedId]);
+  }, [evaluations, selectedId, location.state]);
 
   if (evaluations.length === 0) {
     if (isBulkUploading) {
