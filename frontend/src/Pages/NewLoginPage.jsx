@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import {
   Mail,
   Lock,
@@ -12,10 +13,12 @@ import {
   GraduationCap,
   Building2,
   CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 
 export default function NewLoginPage() {
   const navigate = useNavigate();
+  const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [showPw, setShowPw] = useState(false);
   const [showCpw, setShowCpw] = useState(false);
@@ -29,29 +32,46 @@ export default function NewLoginPage() {
   const [role, setRole] = useState("Teacher");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   // Focus states
   const [focusedField, setFocusedField] = useState("");
 
-  const handleAuth = (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
     if (loading) return;
+    setError("");
+
+    // Client-side validation for register
+    if (!isLogin && password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
     setLoading(true);
 
-    // Mock API call
-    setTimeout(() => {
+    try {
+      if (isLogin) {
+        await login({ email, password });
+      } else {
+        await register({ email, password, name, institution, role });
+      }
       setLoading(false);
       setSuccess(true);
       setTimeout(() => {
         setSuccess(false);
-        navigate("/upload"); // redirect to upload page after successful auth
+        navigate("/upload");
       }, 1500);
-    }, 2000);
+    } catch (err) {
+      setLoading(false);
+      setError(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   const toggleMode = () => {
     setIsLogin(!isLogin);
     setSuccess(false);
+    setError("");
     setEmail("");
     setPassword("");
     setName("");
@@ -307,6 +327,14 @@ export default function NewLoginPage() {
                       {showCpw ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
                   </div>
+                </div>
+              )}
+
+              {/* Error message */}
+              {error && (
+                <div style={styles.errorBox}>
+                  <AlertCircle size={16} style={{ flexShrink: 0 }} />
+                  <span>{error}</span>
                 </div>
               )}
 
@@ -703,6 +731,19 @@ const styles = {
     fontSize: "14px",
     color: "#94a3b8",
     margin: 0,
+  },
+
+  errorBox: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    padding: "12px 14px",
+    background: "rgba(239, 68, 68, 0.1)",
+    border: "1px solid rgba(239, 68, 68, 0.25)",
+    borderRadius: "10px",
+    color: "#f87171",
+    fontSize: "13px",
+    lineHeight: "1.4",
   },
 };
 

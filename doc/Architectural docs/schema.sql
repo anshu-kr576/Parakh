@@ -1,9 +1,21 @@
 -- Enable uuid-ossp extension (if not already enabled)
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+-- Create users table for teacher authentication
+CREATE TABLE IF NOT EXISTS public.users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    name TEXT NOT NULL,
+    institution TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'Teacher',
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
 -- Create exam_papers table if it doesn't exist
 CREATE TABLE IF NOT EXISTS public.exam_papers (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES public.users(id) ON DELETE CASCADE,
     pdf_filename TEXT NOT NULL,
     parsed_data JSONB NOT NULL,
     created_at TIMESTAMPTZ DEFAULT now()
@@ -24,7 +36,8 @@ CREATE TABLE IF NOT EXISTS public.evaluations (
     created_at TIMESTAMPTZ DEFAULT now()
 );
 
--- Disable Row Level Security (RLS) for easy development access
--- (Alternatively, you can enable RLS and write appropriate policy rules if this goes into production)
-ALTER TABLE public.exam_papers DISABLE ROW LEVEL SECURITY;
-ALTER TABLE public.evaluations DISABLE ROW LEVEL SECURITY;
+-- Enable Row Level Security (RLS) for tables to protect against public access
+ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.exam_papers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.evaluations ENABLE ROW LEVEL SECURITY;
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEvaluation, createBlankSheet } from "../context/EvaluationContext";
+import Navbar from "../components/Navbar";
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -49,14 +50,17 @@ function UploadAnswersPage() {
   // ── Guard ─────────────────────────────────────────────────────────────────
   if (!examPaperId) {
     return (
-      <div style={styles.invalidContainer}>
-        <h2>Invalid Access</h2>
-        <p style={{ color: "var(--text)", margin: "12px 0 24px" }}>
-          Please upload and submit a question paper first.
-        </p>
-        <button onClick={() => navigate("/")} style={styles.submitButton}>
-          Return Home
-        </button>
+      <div style={{ background: "#0f172a", minHeight: "100vh" }}>
+        <Navbar />
+        <div style={styles.invalidContainer}>
+          <h2>Invalid Access</h2>
+          <p style={{ color: "var(--text)", margin: "12px 0 24px" }}>
+            Please upload and submit a question paper first.
+          </p>
+          <button onClick={() => navigate("/")} style={styles.submitButton}>
+            Return Home
+          </button>
+        </div>
       </div>
     );
   }
@@ -131,8 +135,10 @@ function UploadAnswersPage() {
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
-    <div style={styles.container}>
-      <div style={styles.outerCard}>
+    <div style={{ background: "#0f172a", minHeight: "100vh" }}>
+      <Navbar />
+      <div style={{ ...styles.container, background: "transparent" }}>
+        <div style={styles.outerCard}>
         {/* ── Page header ─────────────────────────────────────────── */}
         <div>
           <h2 style={styles.title}>Step 3: Upload Student Answer Sheets</h2>
@@ -465,6 +471,7 @@ function UploadAnswersPage() {
               : `Submit All (${eligibleCount} sheet${eligibleCount !== 1 ? "s" : ""})`}
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -62,32 +63,7 @@ function LandingPage() {
 
   return (
     <div style={styles.container}>
-      {/* Header/Navbar */}
-      <header style={styles.navbar}>
-        <div style={styles.logo} onClick={() => navigate("/")}>
-          Parakh <span style={styles.gradient}>AI</span>
-        </div>
-        <button
-          style={styles.loginBtn}
-          onClick={() => navigate("/login")}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#8b5cf6";
-            e.currentTarget.style.borderColor = "#8b5cf6";
-            e.currentTarget.style.color = "#fff";
-            e.currentTarget.style.transform = "translateY(-1px)";
-            e.currentTarget.style.boxShadow = "0 4px 12px rgba(139, 92, 246, 0.25)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(30, 41, 59, 0.5)";
-            e.currentTarget.style.borderColor = "#334155";
-            e.currentTarget.style.color = "#e2e8f0";
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "none";
-          }}
-        >
-          Sign In
-        </button>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section style={styles.hero}>

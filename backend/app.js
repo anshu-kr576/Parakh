@@ -6,6 +6,7 @@ const morgan = require("morgan");
 
 const examRoutes = require("./routes/examRoutes");
 const evaluationRoutes = require("./routes/evaluationRoutes");
+const authRoutes = require("./routes/authRoutes");
 const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/exams", examRoutes);
 app.use("/api/evaluations", evaluationRoutes);
 

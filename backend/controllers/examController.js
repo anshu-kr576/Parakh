@@ -6,11 +6,10 @@ const examService = require("../services/examService");
  *
  * 1. Sends validated files to AI service for parsing
  * 2. Returns success with parsed data (no database write here)
- * 
  */
 const uploadPaper = async (req, res, next) => {
   const filename = req.files && req.files[0] ? req.files[0].originalname : "unknown_paper.pdf";
-  console.log(`[Exam] >>> Incoming POST /api/exams/upload-paper. No. of Files: ${req.files.length}`);
+  console.log(`[Exam] >>> Incoming POST /api/exams/upload-paper. No. of Files: ${req.files.length}, User: ${req.user.id}`);
 
   try {
     console.log("[Exam] => Sending question paper PDF to AI Parsing Service (QP-parsing)...");
@@ -50,15 +49,16 @@ const uploadPaper = async (req, res, next) => {
  * Handles POST /api/exams/generate-rubric
  *
  * 1. Extracts the original filename and the edited parsed JSON from the body
- * 2. Stores the data in the database (Supabase)
+ * 2. Stores the data in the database (Supabase), linked to the authenticated user
  * 3. Returns a success message
  */
 const generateRubric = async (req, res, next) => {
   const { pdf_filename, parsed_data, questionPaperId, question_paper_id } = req.body;
   const paperId = questionPaperId || question_paper_id;
   const filename = pdf_filename || "unknown_paper.pdf";
+  const userId = req.user.id;
 
-  console.log(`[Exam] >>> Incoming POST /api/exams/generate-rubric. File: ${filename}, ID: ${paperId || "new"}`);
+  console.log(`[Exam] >>> Incoming POST /api/exams/generate-rubric. File: ${filename}, ID: ${paperId || "new"}, User: ${userId}`);
 
   try {
     if (!parsed_data) {
@@ -72,10 +72,10 @@ const generateRubric = async (req, res, next) => {
     let result;
     if (paperId) {
       console.log(`[Exam] => Updating parsed question paper and rubrics in database for ID: ${paperId}`);
-      result = await examService.updateExamPaper(paperId, parsed_data, filename);
+      result = await examService.updateExamPaper(paperId, parsed_data, filename, userId);
     } else {
       console.log("[Exam] => Storing new parsed question paper and rubrics in database...");
-      result = await examService.storeExamPaper(parsed_data, filename);
+      result = await examService.storeExamPaper(parsed_data, filename, userId);
     }
     const finalPaperId = result?.id || paperId;
     console.log(`[Exam] => Successfully stored/updated in DB with Record ID: ${finalPaperId}`);
@@ -96,12 +96,13 @@ const generateRubric = async (req, res, next) => {
 /**
  * Handles GET /api/exams/list
  *
- * Retrieves all previously parsed and saved exam papers.
+ * Retrieves all exam papers belonging to the authenticated user.
  */
 const listPapers = async (req, res, next) => {
-  console.log("[Exam] >>> Incoming GET /api/exams/list");
+  const userId = req.user.id;
+  console.log(`[Exam] >>> Incoming GET /api/exams/list. User: ${userId}`);
   try {
-    const data = await examService.listExamPapers();
+    const data = await examService.listExamPapers(userId);
     return res.status(200).json({
       success: true,
       papers: data,
@@ -112,4 +113,38 @@ const listPapers = async (req, res, next) => {
   }
 };
 
-module.exports = { uploadPaper, generateRubric, listPapers };
+/**
+ * Handles DELETE /api/exams/:id
+ *
+ * Deletes an exam paper and all its cascaded evaluations.
+ * Only the owner can delete their own exam papers.
+ */
+const deletePaper = async (req, res, next) => {
+  const { id } = req.params;
+  const userId = req.user.id;
+
+  console.log(`[Exam] >>> Incoming DELETE /api/exams/${id}. User: ${userId}`);
+
+  try {
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing exam paper ID.",
+      });
+    }
+
+    const result = await examService.deleteExamPaper(id, userId);
+    console.log(`[Exam] <<< Successfully deleted exam paper ID: ${result.id}`);
+
+    return res.status(200).json({
+      success: true,
+      message: "Exam paper and all associated evaluations deleted successfully.",
+      deletedId: result.id,
+    });
+  } catch (error) {
+    console.error(`[Exam] [FATAL ERROR] => ${error.message}`);
+    next(error);
+  }
+};
+
+module.exports = { uploadPaper, generateRubric, listPapers, deletePaper };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEvaluation } from "../context/EvaluationContext";
+import Navbar from "../components/Navbar";
 
 // Helper to calculate total earned marks for a student evaluation
 const calculateTotalMarks = (evaluationData) => {
@@ -148,40 +149,46 @@ function EvaluationResultsPage() {
   if (evaluations.length === 0) {
     if (isBulkUploading) {
       return (
-        <div style={styles.invalidContainer}>
-          <h2>Evaluating Student Answer Sheets...</h2>
-          <p style={{ color: "#94a3b8", margin: "12px 0 24px", maxWidth: "450px", textAlign: "center" }}>
-            AI evaluation is running in the background ({bulkProgress.current} of {bulkProgress.total} sheets processed). Results will automatically load on this page as they finish grading.
-          </p>
-          <div style={{ ...styles.backgroundProgressTrack, width: "300px", height: "8px", marginBottom: "24px" }}>
-            <div
-              style={{
-                ...styles.backgroundProgressFill,
-                width: `${bulkProgress.total > 0 ? (bulkProgress.current / bulkProgress.total) * 100 : 0}%`,
-              }}
-            />
-          </div>
-          <div style={{ display: "flex", gap: "12px" }}>
-            <button onClick={() => navigate("/evaluation/upload", { state: { examPaperId, filename, totalMarks } })} style={styles.backHomeBtn}>
-              ← Back to Uploading Sheets
-            </button>
-            <button onClick={() => navigate("/")} style={{ ...styles.sidebarReturnBtn, marginTop: 0 }}>
-              Return Home
-            </button>
+        <div style={{ background: "#0b1120", minHeight: "100vh" }}>
+          <Navbar />
+          <div style={styles.invalidContainer}>
+            <h2>Evaluating Student Answer Sheets...</h2>
+            <p style={{ color: "#94a3b8", margin: "12px 0 24px", maxWidth: "450px", textAlign: "center" }}>
+              AI evaluation is running in the background ({bulkProgress.current} of {bulkProgress.total} sheets processed). Results will automatically load on this page as they finish grading.
+            </p>
+            <div style={{ ...styles.backgroundProgressTrack, width: "300px", height: "8px", marginBottom: "24px" }}>
+              <div
+                style={{
+                  ...styles.backgroundProgressFill,
+                  width: `${bulkProgress.total > 0 ? (bulkProgress.current / bulkProgress.total) * 100 : 0}%`,
+                }}
+              />
+            </div>
+            <div style={{ display: "flex", gap: "12px" }}>
+              <button onClick={() => navigate("/evaluation/upload", { state: { examPaperId, filename, totalMarks } })} style={styles.backHomeBtn}>
+                ← Back to Uploading Sheets
+              </button>
+              <button onClick={() => navigate("/")} style={{ ...styles.sidebarReturnBtn, marginTop: 0 }}>
+                Return Home
+              </button>
+            </div>
           </div>
         </div>
       );
     }
 
     return (
-      <div style={styles.invalidContainer}>
-        <h2>No Assessment Results Found</h2>
-        <p style={{ color: "#94a3b8", margin: "12px 0 24px" }}>
-          Please upload and successfully submit student answer sheets to view the evaluation dashboard.
-        </p>
-        <button onClick={() => navigate("/")} style={styles.backHomeBtn}>
-          Return Home
-        </button>
+      <div style={{ background: "#0b1120", minHeight: "100vh" }}>
+        <Navbar />
+        <div style={styles.invalidContainer}>
+          <h2>No Assessment Results Found</h2>
+          <p style={{ color: "#94a3b8", margin: "12px 0 24px" }}>
+            Please upload and successfully submit student answer sheets to view the evaluation dashboard.
+          </p>
+          <button onClick={() => navigate("/")} style={styles.backHomeBtn}>
+            Return Home
+          </button>
+        </div>
       </div>
     );
   }
@@ -207,7 +214,9 @@ function EvaluationResultsPage() {
     : (totalMarks !== undefined && totalMarks !== null ? totalMarks : null);
 
   return (
-    <div style={styles.container}>
+    <div style={{ background: "#0b1120", minHeight: "100vh" }}>
+      <Navbar />
+      <div style={{ ...styles.container, background: "transparent", paddingTop: "20px" }}>
       {/* Page Header */}
       <header style={styles.header}>
         <h1 style={styles.title}>Step 4: Assessment & Evaluation Results</h1>
@@ -413,6 +422,7 @@ function EvaluationResultsPage() {
           )}
         </div>
 
+      </div>
       </div>
     </div>
   );
