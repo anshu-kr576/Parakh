@@ -6,7 +6,7 @@ const aiService = require("../services/aiService");
  *
  * 1. Validates that question_paper_id is provided.
  * 2. Validates that a file is uploaded and that it is a PDF.
- * 3. Fetches the question paper JSON from Supabase.
+ * 3. Fetches the question paper JSON from Supabase (with ownership check).
  * 4. Sends the answer sheet PDF and the question paper JSON to the FastAPI AI service.
  * 5. Stores the evaluated results back into the Supabase database.
  * 6. Returns the evaluation result to the client.
@@ -16,8 +16,9 @@ const uploadAnswers = async (req, res, next) => {
   const studentName = req.body.student_name || req.body.studentName;
   const files = req.files || [];
   const file = files[0];
+  const userId = req.user.id;
 
-  console.log(`[Evaluation] >>> Incoming POST /api/evaluations/upload-answers. ID: ${questionPaperId || "undefined"}, Student: ${studentName || "none"}, File: ${file ? file.originalname : "none"}`);
+  console.log(`[Evaluation] >>> Incoming POST /api/evaluations/upload-answers. ID: ${questionPaperId || "undefined"}, Student: ${studentName || "none"}, File: ${file ? file.originalname : "none"}, User: ${userId}`);
 
   try {
     if (!questionPaperId) {
@@ -37,8 +38,8 @@ const uploadAnswers = async (req, res, next) => {
     }
 
     // Validate that the uploaded file is a PDF
-    const isPdf = 
-      file.mimetype === "application/pdf" || 
+    const isPdf =
+      file.mimetype === "application/pdf" ||
       file.originalname.toLowerCase().endsWith(".pdf");
 
     if (!isPdf) {
@@ -51,11 +52,11 @@ const uploadAnswers = async (req, res, next) => {
 
     console.log("[Evaluation] => Request validation passed successfully.");
 
-    // Step 1: Fetch the question paper from Supabase
+    // Step 1: Fetch the question paper from Supabase (verifies ownership)
     console.log(`[Evaluation] => Step 1: Fetching question paper template for ID ${questionPaperId} from database...`);
     let examPaper;
     try {
-      examPaper = await evaluationService.getQuestionPaperById(questionPaperId);
+      examPaper = await evaluationService.getQuestionPaperById(questionPaperId, userId);
       console.log("[Evaluation] => Step 1: Question paper template retrieved successfully.");
     } catch (dbError) {
       console.error(`[Evaluation] [DB ERROR] => Failed to fetch question paper: ${dbError.message}`);
@@ -63,6 +64,12 @@ const uploadAnswers = async (req, res, next) => {
         return res.status(404).json({
           success: false,
           error: `Question paper with ID ${questionPaperId} was not found.`,
+        });
+      }
+      if (dbError.statusCode === 403) {
+        return res.status(403).json({
+          success: false,
+          error: dbError.message,
         });
       }
       throw dbError;
@@ -119,9 +126,15 @@ const uploadAnswers = async (req, res, next) => {
   }
 };
 
+/**
+ * Handles GET /api/evaluations/paper/:examPaperId
+ *
+ * Retrieves all evaluations for an exam paper, after verifying ownership.
+ */
 const getEvaluations = async (req, res, next) => {
   const { examPaperId } = req.params;
-  console.log(`[Evaluation] >>> Incoming GET /api/evaluations/paper/${examPaperId}`);
+  const userId = req.user.id;
+  console.log(`[Evaluation] >>> Incoming GET /api/evaluations/paper/${examPaperId}. User: ${userId}`);
 
   try {
     if (!examPaperId) {
@@ -130,6 +143,19 @@ const getEvaluations = async (req, res, next) => {
         success: false,
         error: "Missing examPaperId parameter.",
       });
+    }
+
+    // Verify ownership of the exam paper before returning evaluations
+    try {
+      await evaluationService.getQuestionPaperById(examPaperId, userId);
+    } catch (ownerError) {
+      if (ownerError.statusCode === 403 || ownerError.statusCode === 404) {
+        return res.status(ownerError.statusCode).json({
+          success: false,
+          error: ownerError.message,
+        });
+      }
+      throw ownerError;
     }
 
     const data = await evaluationService.getEvaluationsByPaperId(examPaperId);
@@ -154,7 +180,42 @@ const getEvaluations = async (req, res, next) => {
   }
 };
 
+/**
+ * Handles DELETE /api/evaluations/:id
+ *
+ * Deletes an individual student evaluation after verifying ownership
+ * through the parent exam paper.
+ */
+const deleteEvaluation = async (req, res, next) => {
+  const { id } = req.params;
+  const userId = req.user.id;
+
+  console.log(`[Evaluation] >>> Incoming DELETE /api/evaluations/${id}. User: ${userId}`);
+
+  try {
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing evaluation ID.",
+      });
+    }
+
+    const result = await evaluationService.deleteEvaluation(id, userId);
+    console.log(`[Evaluation] <<< Successfully deleted evaluation ID: ${result.id}`);
+
+    return res.status(200).json({
+      success: true,
+      message: "Evaluation deleted successfully.",
+      deletedId: result.id,
+    });
+  } catch (error) {
+    console.error(`[Evaluation] [FATAL ERROR] => ${error.message}`);
+    next(error);
+  }
+};
+
 module.exports = {
   uploadAnswers,
   getEvaluations,
+  deleteEvaluation,
 };

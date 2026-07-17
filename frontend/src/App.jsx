@@ -1,99 +1,39 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./Pages/LandingPage";
-import UploadPage from "./Pages/UploadPage";
-import ReviewPage from "./Pages/ReviewPage";
+import LandingPage from "./pages/LandingPage";
+import UploadPage from "./pages/UploadPage";
+import ReviewPage from "./pages/ReviewPage";
 import UploadAnswersPage from "./pages/UploadAnswersPage";
-import EvaluationResultsPage from "./Pages/EvaluationResultsPage";
+import EvaluationResultsPage from "./pages/EvaluationResultsPage";
+import NewLoginPage from "./pages/NewLoginPage";
 import { EvaluationProvider } from "./context/EvaluationContext";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <EvaluationProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/upload" element={<UploadPage />} />
-          <Route path="/review" element={<ReviewPage />} />
-          <Route
-            path="/evaluation/upload"
-            element={<UploadAnswersPage />}
-          />
-          <Route
-            path="/evaluation/results"
-            element={<EvaluationResultsPage />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </EvaluationProvider>
+    <AuthProvider>
+      <EvaluationProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<NewLoginPage />} />
+            <Route path="/upload" element={
+              <ProtectedRoute><UploadPage /></ProtectedRoute>
+            } />
+            <Route path="/review" element={
+              <ProtectedRoute><ReviewPage /></ProtectedRoute>
+            } />
+            <Route path="/evaluation/upload" element={
+              <ProtectedRoute><UploadAnswersPage /></ProtectedRoute>
+            } />
+            <Route path="/evaluation/results" element={
+              <ProtectedRoute><EvaluationResultsPage /></ProtectedRoute>
+            } />
+          </Routes>
+        </BrowserRouter>
+      </EvaluationProvider>
+    </AuthProvider>
   );
 }
 
 export default App;
-
-
-// import PdfUploader from './components/PdfUploader'
-
-// function App() {
-//   return (
-//     <div style={styles.appContainer}>
-//       <header style={styles.header}>
-//         <h1 style={styles.title}>AICTE Parakh</h1>
-//         <p style={styles.subtitle}>Unified Exam Paper Evaluation and Assessment Portal</p>
-//       </header>
-//       <main style={styles.main}>
-//         <PdfUploader />
-//       </main>
-//       <footer style={styles.footer}>
-//         <p>&copy; {new Date().getFullYear()} AICTE Parakh. All rights reserved.</p>
-//       </footer>
-//     </div>
-//   )
-// }
-
-// const styles = {
-//   appContainer: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     minHeight: '100vh',
-//     width: '100%',
-//     boxSizing: 'border-box',
-//     justifyContent: 'space-between',
-//     padding: '20px',
-//   },
-//   header: {
-//     textAlign: 'center',
-//     margin: '40px 0 20px',
-//   },
-//   title: {
-//     margin: '0',
-//     fontSize: '48px',
-//     background: 'linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%)',
-//     WebkitBackgroundClip: 'text',
-//     WebkitTextFillColor: 'transparent',
-//     fontWeight: '800',
-//     letterSpacing: '-1px',
-//   },
-//   subtitle: {
-//     margin: '8px 0 0 0',
-//     fontSize: '16px',
-//     color: 'var(--text)',
-//   },
-//   main: {
-//     flex: 1,
-//     display: 'flex',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     width: '100%',
-//   },
-//   footer: {
-//     textAlign: 'center',
-//     padding: '20px 0',
-//     fontSize: '14px',
-//     color: 'var(--text)',
-//     borderTop: '1px solid var(--border)',
-//     marginTop: '40px',
-//   }
-// }
-
-// export default App
-

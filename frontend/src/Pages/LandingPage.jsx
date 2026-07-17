@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -62,6 +63,8 @@ function LandingPage() {
 
   return (
     <div style={styles.container}>
+      <Navbar />
+
       {/* Hero Section */}
       <section style={styles.hero}>
         <div style={styles.badge}>AI-Powered Evaluation Platform</div>
@@ -185,14 +188,43 @@ const styles = {
     minHeight: "100vh",
     background: "#0b1120",
     color: "#fff",
-    padding: "40px 24px",
+    padding: "20px 24px 40px 24px",
+  },
+
+  navbar: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    maxWidth: "1200px",
+    margin: "0 auto 20px auto",
+    padding: "10px 0",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
+  },
+
+  logo: {
+    fontSize: "24px",
+    fontWeight: "800",
+    letterSpacing: "-0.5px",
+    cursor: "pointer",
+  },
+
+  loginBtn: {
+    padding: "10px 20px",
+    borderRadius: "10px",
+    border: "1px solid #334155",
+    background: "rgba(30, 41, 59, 0.5)",
+    color: "#e2e8f0",
+    fontSize: "14px",
+    fontWeight: "600",
+    cursor: "pointer",
+    transition: "all 0.2s ease",
   },
 
   hero: {
     maxWidth: "900px",
     margin: "0 auto",
     textAlign: "center",
-    paddingTop: "80px",
+    paddingTop: "60px",
   },
 
   badge: {

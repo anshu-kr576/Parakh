@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import QuestionNode from "../components/QuestionNode";
+import { useAuth } from "../context/AuthContext";
+import Navbar from "../components/Navbar";
 
 // ── Collapsible Panel Helper ──────────────────────────────────────────
 const CollapsiblePanel = ({ title, icon, defaultOpen = false, accentColor = "#8b5cf6", children }) => {
@@ -55,6 +57,7 @@ const ChoicesDisplay = ({ choices, label }) => {
 function ReviewPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { authFetch } = useAuth();
 
   const [paperData, setPaperData] = useState(null);
   const [filename, setFilename] = useState("unknown_paper.pdf");
@@ -138,10 +141,8 @@ function ReviewPage() {
     setErrorMessage("");
 
     try {
-      const backendBase = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-      const response = await fetch(`${backendBase}/api/exams/generate-rubric`, {
+      const response = await authFetch("/exams/generate-rubric", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ pdf_filename: filename, parsed_data: paperData, questionPaperId }),
       });
 
@@ -178,13 +179,16 @@ function ReviewPage() {
   // ── Empty state ─────────────────────────────────────────────────────────
   if (!paperData) {
     return (
-      <div style={styles.container}>
-        <div style={{ textAlign: "center", padding: "40px" }}>
-          <h2>No Question Paper Data Found</h2>
-          <p style={{ color: "#94a3b8", margin: "16px 0" }}>Please go back and upload a PDF or images to begin.</p>
-          <button onClick={() => navigate("/upload")} style={styles.submitBtn}>
-            ← Go to Upload
-          </button>
+      <div style={{ background: "#0b1120", minHeight: "100vh" }}>
+        <Navbar />
+        <div style={styles.container}>
+          <div style={{ textAlign: "center", padding: "40px" }}>
+            <h2>No Question Paper Data Found</h2>
+            <p style={{ color: "#94a3b8", margin: "16px 0" }}>Please go back and upload a PDF or images to begin.</p>
+            <button onClick={() => navigate("/upload")} style={styles.submitBtn}>
+              ← Go to Upload
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -233,7 +237,9 @@ function ReviewPage() {
   //  RENDER
   // ═══════════════════════════════════════════════════════════════════════
   return (
-    <div style={styles.container}>
+    <div style={{ background: "#0b1120", minHeight: "100vh" }}>
+      <Navbar />
+      <div style={{ ...styles.container, background: "transparent", paddingTop: "20px" }}>
       {/* ── Header ──────────────────────────────────────────────────── */}
       <header style={styles.header}>
         <h1 style={styles.title}>Step 2: Question Review & Rubrics</h1>
@@ -471,6 +477,7 @@ function ReviewPage() {
           {submitStatus === "submitting" ? "Saving..." : "Submit Review"}
         </button>
       </footer>
+      </div>
     </div>
   );
 }

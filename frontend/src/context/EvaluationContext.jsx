@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useCallback, useMemo, useRef, useEffect } from "react";
+import { useAuth } from "./AuthContext";
 
 const EvaluationContext = createContext(null);
 
@@ -28,6 +29,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const BATCH_COOLDOWN_MS = 5000;
 
 export const EvaluationProvider = ({ children }) => {
+  const { authFetch } = useAuth();
   const [examPaperId, setExamPaperId] = useState(null);
   const [filename, setFilename] = useState(null);
   const [totalMarks, setTotalMarks] = useState(null);
@@ -53,7 +55,7 @@ export const EvaluationProvider = ({ children }) => {
     if (!paperId || loadedPaperIdRef.current === paperId) return;
     setIsLoading(true);
     try {
-      const response = await fetch(`${backendBase}/api/evaluations/paper/${paperId}`);
+      const response = await authFetch(`/evaluations/paper/${paperId}`);
       if (response.ok) {
         const data = await response.json();
         if (data.success && data.evaluations) {
@@ -89,7 +91,7 @@ export const EvaluationProvider = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [backendBase]);
+  }, [authFetch]);
 
   const setExamInfo = useCallback(({ examPaperId: paperId, filename: fname, totalMarks: marks }) => {
     setExamPaperId((prevId) => {
@@ -163,7 +165,7 @@ export const EvaluationProvider = ({ children }) => {
     if (studentName?.trim()) formData.append("student_name", studentName.trim());
 
     try {
-      const response = await fetch(`${backendBase}/api/evaluations/upload-answers`, {
+      const response = await authFetch("/evaluations/upload-answers", {
         method: "POST",
         body: formData,
       });
@@ -196,7 +198,7 @@ export const EvaluationProvider = ({ children }) => {
       });
       return false;
     }
-  }, [backendBase, updateSheet, examPaperId]);
+  }, [authFetch, updateSheet, examPaperId]);
 
   const handleSubmitAll = useCallback(async () => {
     // Get the latest list of sheets using our ref to avoid closures

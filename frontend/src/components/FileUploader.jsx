@@ -2,9 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import tempJson from "../tempMockData.json";
 import { jsPDF } from "jspdf";
+import { useAuth } from "../context/AuthContext";
 
 export default function FileUploader() {
   const navigate = useNavigate();
+  const { authFetch } = useAuth();
   const [files, setFiles] = useState([]);
   const [activeTab, setActiveTab] = useState("upload"); // upload | select
   const [existingPapers, setExistingPapers] = useState([]);
@@ -15,8 +17,7 @@ export default function FileUploader() {
     setIsLoadingPapers(true);
     setLoadPapersError("");
     try {
-      const backendBase = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-      const response = await fetch(`${backendBase}/api/exams/list`);
+      const response = await authFetch("/exams/list");
       
       let data = null;
       const contentType = response.headers.get("content-type");
@@ -274,7 +275,7 @@ export default function FileUploader() {
     });
 
     try {
-      const response = await fetch(backendUrl, {
+      const response = await authFetch("/exams/upload-paper", {
         method: "POST",
         body: formData,
       });
